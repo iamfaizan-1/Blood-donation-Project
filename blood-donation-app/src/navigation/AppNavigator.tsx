@@ -9,6 +9,8 @@ import { DonorRequestScreen } from '../screens/DonorRequestScreen';
 import { ActiveRequestScreen } from '../screens/ActiveRequestScreen';
 import { ChatScreen } from '../screens/ChatScreen';
 import { DonationCompletedScreen } from '../screens/DonationCompletedScreen';
+import { InsightsScreen } from '../screens/InsightsScreen';
+import { ChatbotScreen } from '../screens/ChatbotScreen';
 
 import { Colors } from '../constants/colors';
 
@@ -39,6 +41,8 @@ export const AppNavigator: React.FC = () => {
         component={DonationCompletedScreen}
         options={{ animation: 'fade' }}
       />
+      <Stack.Screen name="Insights" component={InsightsScreen} />
+      <Stack.Screen name="Chatbot" component={ChatbotScreen} />
     </Stack.Navigator>
   );
 };

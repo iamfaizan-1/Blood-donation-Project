@@ -50,6 +50,8 @@ export type RootStackParamList = {
     hospital?: string;
   };
   DonationCompleted: { donationId?: string; bloodType?: BloodType; hospital?: string } | undefined;
+  Insights: undefined;
+  Chatbot: undefined;
 };
 
 /**

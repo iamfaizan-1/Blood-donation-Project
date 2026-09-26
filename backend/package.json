@@ -7,10 +7,11 @@
     "dev": "tsc && node --watch dist/server.js",
     "build": "tsc",
     "start": "node dist/server.js",
-    "test": "ts-node-dev --transpile-only src/tests/bloodCompatibility.test.ts && ts-node-dev --transpile-only src/tests/donorWorkflow.test.ts && ts-node-dev --transpile-only src/tests/pushNotifications.test.ts && ts-node-dev --transpile-only src/tests/communication.test.ts && ts-node-dev --transpile-only src/tests/comprehensiveWorkflow.test.ts",
+    "test": "ts-node-dev --transpile-only src/tests/bloodCompatibility.test.ts && ts-node-dev --transpile-only src/tests/donorWorkflow.test.ts && ts-node-dev --transpile-only src/tests/pushNotifications.test.ts && ts-node-dev --transpile-only src/tests/communication.test.ts && npm run test:chatbot && ts-node-dev --transpile-only src/tests/comprehensiveWorkflow.test.ts",
     "test:workflow": "ts-node-dev --transpile-only src/tests/donorWorkflow.test.ts",
     "test:push": "ts-node-dev --transpile-only src/tests/pushNotifications.test.ts",
     "test:chat": "ts-node-dev --transpile-only src/tests/communication.test.ts",
+    "test:chatbot": "npm run build && node dist/tests/chatbot.test.js",
     "test:e2e": "ts-node-dev --transpile-only src/tests/comprehensiveWorkflow.test.ts",
     "test:db": "ts-node-dev --transpile-only src/tests/testDatabaseConnection.ts"
   },

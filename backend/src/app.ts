@@ -9,6 +9,8 @@ import requestRoutes from './routes/requestRoutes.js';
 import donationRoutes from './routes/donationRoutes.js';
 import donorWorkflowRoutes from './routes/donorWorkflowRoutes.js';
 import communicationRoutes from './routes/communicationRoutes.js';
+import analyticsRoutes from './routes/analyticsRoutes.js';
+import chatbotRoutes from './routes/chatbotRoutes.js';
 import { globalErrorHandler } from './middleware/errorHandler.js';
 import { AppError } from './utils/appError.js';
 import { config } from './config/env.js';
@@ -49,6 +51,8 @@ app.use('/api/requests', requestRoutes);
 app.use('/api/donations', donationRoutes);
 app.use('/api/donor-workflow', donorWorkflowRoutes);
 app.use('/api/communication', communicationRoutes);
+app.use('/api/analytics', analyticsRoutes);
+app.use('/api/chatbot', chatbotRoutes);
 
 // Handle 404 Undefined Routes
 app.all('*', (req: Request, _res: Response, next) => {

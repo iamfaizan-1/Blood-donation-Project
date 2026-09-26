@@ -124,6 +124,14 @@ export const HomeScreen: React.FC = () => {
     navigation.navigate('MainTabs', { screen: 'Location' });
   };
 
+  const handleInsights = () => {
+    navigation.navigate('Insights');
+  };
+
+  const handleChatbot = () => {
+    navigation.navigate('Chatbot');
+  };
+
   const handleViewActiveRequest = (reqToView?: any) => {
     const target = reqToView || activeRequest;
     if (target && target._id) {
@@ -296,6 +304,30 @@ export const HomeScreen: React.FC = () => {
           </View>
           <Text style={styles.actionTitle}>Active Request</Text>
           <Text style={styles.actionSub}>Track in-progress</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.actionCard}
+          onPress={handleInsights}
+          activeOpacity={0.8}
+        >
+          <View style={[styles.actionIconBg, { backgroundColor: Colors.secondaryLight }]}>
+            <Text style={styles.actionEmoji}>📊</Text>
+          </View>
+          <Text style={styles.actionTitle}>Insights</Text>
+          <Text style={styles.actionSub}>Data mining & trends</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.actionCard}
+          onPress={handleChatbot}
+          activeOpacity={0.8}
+        >
+          <View style={[styles.actionIconBg, { backgroundColor: Colors.primaryLight }]}>
+            <Text style={styles.actionEmoji}>🤖</Text>
+          </View>
+          <Text style={styles.actionTitle}>Ask Assistant</Text>
+          <Text style={styles.actionSub}>AI chatbot help</Text>
         </TouchableOpacity>
       </View>
 

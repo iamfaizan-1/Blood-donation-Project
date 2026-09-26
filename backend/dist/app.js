@@ -13,6 +13,8 @@ const requestRoutes_js_1 = __importDefault(require("./routes/requestRoutes.js"))
 const donationRoutes_js_1 = __importDefault(require("./routes/donationRoutes.js"));
 const donorWorkflowRoutes_js_1 = __importDefault(require("./routes/donorWorkflowRoutes.js"));
 const communicationRoutes_js_1 = __importDefault(require("./routes/communicationRoutes.js"));
+const analyticsRoutes_js_1 = __importDefault(require("./routes/analyticsRoutes.js"));
+const chatbotRoutes_js_1 = __importDefault(require("./routes/chatbotRoutes.js"));
 const errorHandler_js_1 = require("./middleware/errorHandler.js");
 const appError_js_1 = require("./utils/appError.js");
 const env_js_1 = require("./config/env.js");
@@ -45,6 +47,8 @@ app.use('/api/requests', requestRoutes_js_1.default);
 app.use('/api/donations', donationRoutes_js_1.default);
 app.use('/api/donor-workflow', donorWorkflowRoutes_js_1.default);
 app.use('/api/communication', communicationRoutes_js_1.default);
+app.use('/api/analytics', analyticsRoutes_js_1.default);
+app.use('/api/chatbot', chatbotRoutes_js_1.default);
 // Handle 404 Undefined Routes
 app.all('*', (req, _res, next) => {
     next(new appError_js_1.AppError(`Cannot find ${req.originalUrl} on this server!`, 404));
